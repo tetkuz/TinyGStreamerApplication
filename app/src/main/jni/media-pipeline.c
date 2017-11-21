@@ -24,7 +24,8 @@ jint JNI_OnLoad(JavaVM *vm, void *reserved) {
         __android_log_print (ANDROID_LOG_ERROR, "tutorial-1", "Could not retrieve JNIEnv");
         return 0;
     }
-    jclass klass = (*env)->FindClass (env, "org/freedesktop/gstreamer/tutorials/tutorial_1/Tutorial1");
+
+    jclass klass = (*env)->FindClass (env, "tetkuz/tinygstreamerapplication/MainActivity");
     (*env)->RegisterNatives (env, klass, native_methods, G_N_ELEMENTS(native_methods));
 
     return JNI_VERSION_1_6;
